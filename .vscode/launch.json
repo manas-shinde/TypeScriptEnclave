@@ -7,9 +7,18 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "Launch Program",
+      "name": "01 - Getting Started with TypeScript",
       "skipFiles": ["<node_internals>/**"],
       "program": "${workspaceFolder}\\src\\01 - Getting Started with TypeScript\\src\\index.ts",
+      "preLaunchTask": "tsc: build - tsconfig.json",
+      "outFiles": ["${workspaceFolder}/**/*.js"]
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "02 - Fundamentals",
+      "skipFiles": ["<node_internals>/**"],
+      "program": "${workspaceFolder}\\src\\02 - Fundamentals\\src\\index.ts",
       "preLaunchTask": "tsc: build - tsconfig.json",
       "outFiles": ["${workspaceFolder}/**/*.js"]
     }
