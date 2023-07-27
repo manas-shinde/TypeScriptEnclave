@@ -21,6 +21,15 @@
       "program": "${workspaceFolder}\\src\\02 - Fundamentals\\src\\index.ts",
       "preLaunchTask": "tsc: build - tsconfig.json",
       "outFiles": ["${workspaceFolder}/**/*.js"]
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "03 - Advanced Types",
+      "skipFiles": ["<node_internals>/**"],
+      "program": "${workspaceFolder}\\src\\03 - Advanced Types\\src\\index.ts",
+      "preLaunchTask": "tsc: build - tsconfig.json",
+      "outFiles": ["${workspaceFolder}/**/*.js"]
     }
   ]
 }
