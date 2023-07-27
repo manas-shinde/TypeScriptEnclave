@@ -48,7 +48,7 @@ function calculateTax(income: number, taxYear: number = 2022): number {
 //Object 
 
 let employee: {
-    readonly id: number,
+    readonly id: number,// id can't be overwritten
     name: string,
 
     //function
