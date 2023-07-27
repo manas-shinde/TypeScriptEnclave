@@ -23,7 +23,11 @@ let emp: Employee = {
 emp.joined(new Date());
 
 
-/* Union Types */
+/* 
+Union Types :
+A union type describes a value that can be one of several types.
+We use the vertical bar ( | ) to separate each type, so number | string | boolean is the type of a value that can be a number , a string , or a boolean .
+ */
 
 function kgToLbs(weight: number | string): number {
     if (typeof weight === 'number')
@@ -35,3 +39,23 @@ function kgToLbs(weight: number | string): number {
 console.info(`10 kg = ${kgToLbs(10)} lbs`);
 console.info(`50 kg = ${kgToLbs('50kg')} lbs`);
 
+
+/*
+Intersection type :
+An intersection type combines multiple types into one. 
+This allows you to add together existing types to get a single type that has all the features you need.
+*/
+type Draggable = {
+    drag: () => void;
+}
+
+type Resizable = {
+    resize: () => void;
+}
+
+type UIWidget = Draggable & Resizable;
+
+let testBox: UIWidget = {
+    drag: () => { },
+    resize: () => { }
+}
