@@ -3,12 +3,17 @@ class Account {
     constructor(id, owner, balance) {
         this.id = id;
         this.owner = owner;
-        this.balance = balance;
+        this._balance = balance;
     }
     deposite(amount) {
         if (amount <= 0)
             throw new Error(`Please provide amount greature than Zero!`);
-        this.balance += amount;
+        this._balance += amount;
+    }
+    getBalance() {
+        return this._balance;
+    }
+    calculateTax() {
     }
 }
 let account1 = new Account(1, "manas", 15000);
