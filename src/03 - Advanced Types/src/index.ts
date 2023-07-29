@@ -59,3 +59,11 @@ let testBox: UIWidget = {
     drag: () => { },
     resize: () => { }
 }
+
+/** Literal types */
+
+type Quantity = 50 | 100;
+
+let limit: Quantity = 50;
+
+type Metric = 'cm' | 'inch';
