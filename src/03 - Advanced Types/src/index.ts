@@ -67,3 +67,13 @@ type Quantity = 50 | 100;
 let limit: Quantity = 50;
 
 type Metric = 'cm' | 'inch';
+
+/* Nullable Types */
+function greet(name: string | null) {
+    if (name)
+        console.log(`Greetings! ${name.toUpperCase()} `);
+    else
+        console.log('Hola!');
+}
+
+greet(null);
