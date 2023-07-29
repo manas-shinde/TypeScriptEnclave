@@ -77,3 +77,13 @@ function greet(name: string | null) {
 }
 
 greet(null);
+
+/* Nullish Coalescing Operating */
+
+let speed: number | null = null;
+let ride = {
+    //  Falsy (undefined, null, '', false, 0)
+    //  Nullish coalescing operator
+    //  if speed is not null or undefined
+    speed: speed ?? 30
+}
