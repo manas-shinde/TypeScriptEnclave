@@ -87,3 +87,39 @@ let ride = {
     //  if speed is not null or undefined
     speed: speed ?? 30
 }
+
+/** Exercise */
+// 1)
+type User = {
+    name: string,
+    age: number,
+    occupation?: string
+}
+
+const user: User[] = [
+    {
+        name: "manas",
+        age: 24,
+        occupation: 'SWE'
+    },
+    {
+        name: 'Akshay Patil',
+        age: 23
+    }
+]
+
+// 2
+
+type Bird = {
+    fly: () => void
+}
+
+type Fish = {
+    swim: () => void
+}
+
+type Pet = Bird | Fish;
+
+// 3)
+type DaysOfWeek = "Monday" | "Tuesday" | "Wednesday" | "Thursday" | "Friday" | "Saturday" | "Sunday";
+
