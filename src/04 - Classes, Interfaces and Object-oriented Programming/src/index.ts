@@ -41,3 +41,20 @@ console.info(account1 instanceof Account);
 console.log(account1.balance);
 // calling setter
 account1.ownerName = "manas shinde";
+
+
+/** Index Signature Property
+ * 
+ * Index signature is used to represent the type of object/dictionary when the values of the object are of consistent types.
+ *  Syntax: { [key: KeyType] : ValueType }
+ */
+class SeatAssignment {
+    //seat number - A1, A2, ...
+    //Index Signature Property
+    [seatNumber: string]: string
+}
+
+const seat = new SeatAssignment();
+seat.A1 = "Mosh";
+seat['A2'] = "Omkar";
+

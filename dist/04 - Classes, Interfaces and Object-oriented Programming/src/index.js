@@ -24,4 +24,9 @@ console.info(account1);
 console.info(account1 instanceof Account);
 console.log(account1.balance);
 account1.ownerName = "manas shinde";
+class SeatAssignment {
+}
+const seat = new SeatAssignment();
+seat.A1 = "Mosh";
+seat['A2'] = "Omkar";
 //# sourceMappingURL=index.js.map
