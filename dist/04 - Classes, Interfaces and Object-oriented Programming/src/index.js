@@ -53,7 +53,7 @@ class Person {
         this.lastName = lastName;
     }
     walk() {
-        console.log("Walking...");
+        console.log('Walking');
     }
     get fullName() {
         return this.firstName + ' ' + this.lastName;
@@ -77,4 +77,29 @@ const student1 = new Student(1, "manas", "shinde");
 console.log("Student Full Name : " + student1.fullName);
 const teacher1 = new Teacher("Mosh", "Hamadani");
 console.log("Teacher Full Name : " + teacher1.fullName);
+class Shape {
+    constructor(color) {
+        this.color = color;
+    }
+}
+class Circle extends Shape {
+    constructor(radius, color) {
+        super(color);
+        this.radius = radius;
+    }
+    render() {
+        console.log('Rednering a circle');
+    }
+}
+let circle = new Circle(3, 'blue');
+circle.render();
+class GoogleCalendar {
+    constructor(name) {
+        this.name = name;
+    }
+    addEvent() {
+    }
+    removeEvent() {
+    }
+}
 //# sourceMappingURL=index.js.map

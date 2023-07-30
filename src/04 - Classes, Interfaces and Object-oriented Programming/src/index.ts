@@ -96,8 +96,15 @@ console.log(`Current active rides : ${Ride.activeRide}`);
 class Person {
     constructor(public firstName: string, public lastName: string) { }
 
-    walk() {
-        console.log("Walking...");
+    // private method won't be inherited
+    // private walk() {
+    //      console.log('Walking');
+    //  }
+
+    // protected method will be inherited,
+    // but you should rarely use it
+    protected walk() {
+        console.log('Walking');
     }
     get fullName(): string {
         return this.firstName + ' ' + this.lastName;
@@ -125,3 +132,53 @@ console.log("Student Full Name : " + student1.fullName);
 
 const teacher1 = new Teacher("Mosh", "Hamadani");
 console.log("Teacher Full Name : " + teacher1.fullName);
+
+
+/* Abstract Classes and Methods */
+
+abstract class Shape {
+    constructor(public color: string) {
+    }
+
+    abstract render(): void;
+}
+
+class Circle extends Shape {
+    constructor(public radius: number, color: string) {
+        super(color);
+    }
+
+    override render() {
+        console.log('Rednering a circle')
+    }
+}
+
+let circle = new Circle(3, 'blue');
+circle.render();
+
+/* Interfaces */
+
+interface Calendar {
+    name: string;
+
+    addEvent(): void;
+
+    removeEvent(): void;
+}
+
+interface CloudCalendar extends Calendar {
+    sync(): void;
+}
+
+class GoogleCalendar implements Calendar {
+
+    constructor(public name: string) {
+    }
+
+    addEvent(): void {
+    }
+
+    removeEvent(): void {
+    }
+
+}
