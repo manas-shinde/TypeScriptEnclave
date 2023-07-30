@@ -29,3 +29,26 @@ console.log(numberArr1);
 console.log(numberArr2);
 console.log(numberArr3);
 
+/** Generic Interface */
+interface Result<T> {
+    data: T | null,
+    error: string | null
+}
+
+function fetch<T>(url: string): Result<T> {
+    if (url)
+        return { data: null, error: null };
+    else
+        return { data: null, error: "error occured!" };
+}
+
+interface Product {
+    title: string
+}
+
+interface Users {
+    name: string
+}
+
+let result = fetch<Product>("url");
+console.log(result.data?.title);
