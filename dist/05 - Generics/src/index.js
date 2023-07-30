@@ -1,0 +1,25 @@
+"use strict";
+class KeyValuePair {
+    constructor(key, value) {
+        this.key = key;
+        this.value = value;
+    }
+}
+let pair1 = new KeyValuePair(1, 'a');
+let pair2 = new KeyValuePair('1', 'b');
+console.log("Generics");
+console.log(pair1);
+console.log(pair2);
+console.log("Generic functions:");
+class ArrayUtils {
+    static wrapInArray(value) {
+        return [value];
+    }
+}
+let numberArr1 = ArrayUtils.wrapInArray(2);
+let numberArr2 = ArrayUtils.wrapInArray('manas');
+let numberArr3 = ArrayUtils.wrapInArray(true);
+console.log(numberArr1);
+console.log(numberArr2);
+console.log(numberArr3);
+//# sourceMappingURL=index.js.map
