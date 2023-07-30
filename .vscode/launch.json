@@ -39,6 +39,15 @@
       "program": "${workspaceFolder}\\src\\04 - Classes, Interfaces and Object-oriented Programming\\src\\index.ts",
       "preLaunchTask": "tsc: build - tsconfig.json",
       "outFiles": ["${workspaceFolder}/**/*.js"]
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "05 - Generics",
+      "skipFiles": ["<node_internals>/**"],
+      "program": "${workspaceFolder}\\src\\05 - Generics\\src\\index.ts",
+      "preLaunchTask": "tsc: build - tsconfig.json",
+      "outFiles": ["${workspaceFolder}/**/*.js"]
     }
   ]
 }
