@@ -102,4 +102,16 @@ class GoogleCalendar {
     removeEvent() {
     }
 }
+class Logger {
+    constructor(fileName) {
+        this.fileName = fileName;
+    }
+    log(msg) { }
+}
+class Emp extends Person {
+    constructor(_salary, firstName, lastName) {
+        super(firstName, lastName);
+        this._salary = _salary;
+    }
+}
 //# sourceMappingURL=index.js.map

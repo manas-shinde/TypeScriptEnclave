@@ -182,3 +182,32 @@ class GoogleCalendar implements Calendar {
     }
 
 }
+
+/** Exercise */
+
+// 1)
+class Logger {
+    constructor(public fileName: string) { }
+
+    log(msg: string): void { }
+}
+
+// 3)
+
+class Emp extends Person {
+    constructor(private _salary: number, firstName: string, lastName: string) {
+        super(firstName, lastName);
+    }
+}
+
+// 4)
+interface Address {
+    street: string,
+    city: string,
+    zipcode: number
+}
+interface employee {
+    name: string;
+    salary: number;
+    address: Address
+}
