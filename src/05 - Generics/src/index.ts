@@ -52,3 +52,12 @@ interface Users {
 
 let result = fetch<Product>("url");
 console.log(result.data?.title);
+
+/** Constrains on genericness */
+
+function echo<T extends number | string>(msg: T) {
+    console.log(msg);
+}
+
+echo("manas");
+// echo(true); You wont be able to pass value to function whose type is not number or string
