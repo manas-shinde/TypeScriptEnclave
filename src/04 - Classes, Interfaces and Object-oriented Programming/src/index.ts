@@ -89,3 +89,39 @@ const ride2 = new Ride();
 ride2.start();
 
 console.log(`Current active rides : ${Ride.activeRide}`);
+
+/**Inheritance */
+
+//Super / base / Parent class
+class Person {
+    constructor(public firstName: string, public lastName: string) { }
+
+    walk() {
+        console.log("Walking...");
+    }
+    get fullName(): string {
+        return this.firstName + ' ' + this.lastName;
+    }
+}
+
+//Child / Sub class
+class Student extends Person {
+    constructor(public studentId: number, firstName: string, lastName: string) {
+        super(firstName, lastName);
+    }
+
+    takeTest() {
+        console.log("Taking the test!");
+    }
+}
+class Teacher extends Person {
+    // Method Overrideing
+    override get fullName(): string {
+        return 'Professor ' + super.fullName;
+    }
+}
+const student1 = new Student(1, "manas", "shinde");
+console.log("Student Full Name : " + student1.fullName);
+
+const teacher1 = new Teacher("Mosh", "Hamadani");
+console.log("Teacher Full Name : " + teacher1.fullName);
