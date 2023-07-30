@@ -1,12 +1,14 @@
 class Account {
-    readonly id: number;
-    owner: string;
-    private _balance: number;
-
-    constructor(id: number, owner: string, balance: number) {
-        this.id = id;
-        this.owner = owner;
-        this._balance = balance;
+    /**
+     * Create a new Account instance with the provided parameters.
+     * @param id The unique identifier for the account (read-only property).
+     * @param owner The name of the account owner.
+     * @param _balance The initial balance of the account (private property).
+     */
+    constructor(
+        public readonly id: number,
+        public owner: string,
+        private _balance: number) {
     }
 
     deposite(amount: number): void {
