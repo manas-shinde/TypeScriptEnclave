@@ -58,3 +58,34 @@ const seat = new SeatAssignment();
 seat.A1 = "Mosh";
 seat['A2'] = "Omkar";
 
+console.clear();
+
+/** Static property */
+
+class Ride {
+    // A private static property to keep track of the number of active rides.
+    private static _activeRides: number = 0;
+
+    start() {
+        Ride._activeRides++;
+    }
+    stop() {
+        Ride._activeRides--;
+    }
+
+    /**
+    * Get the number of currently active rides.
+    * @returns The number of active rides.
+    */
+    static get activeRide(): number {
+        return Ride._activeRides;
+    }
+}
+
+const ride1 = new Ride();
+ride1.start();
+
+const ride2 = new Ride();
+ride2.start();
+
+console.log(`Current active rides : ${Ride.activeRide}`);
