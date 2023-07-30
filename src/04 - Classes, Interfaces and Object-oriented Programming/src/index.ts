@@ -17,8 +17,13 @@ class Account {
 
         this._balance += amount;
     }
-    getBalance(): number {
+    //Getters and Setters
+    get balance(): number {
         return this._balance;
+    }
+
+    set ownerName(changedName: string) {
+        this.owner = changedName;
     }
     private calculateTax() {
 
@@ -32,3 +37,7 @@ let account1 = new Account(1, "manas", 15000);
 console.info(account1);
 console.info(account1 instanceof Account);
 
+//calling getter
+console.log(account1.balance);
+// calling setter
+account1.ownerName = "manas shinde";
