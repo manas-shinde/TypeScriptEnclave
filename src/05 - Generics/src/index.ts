@@ -54,6 +54,7 @@ let result = fetch<Product>("url");
 console.log(result.data?.title);
 
 /** Constrains on genericness */
+/* The keyof operator */
 
 function echo<T extends number | string>(msg: T) {
     console.log(msg);
@@ -61,3 +62,57 @@ function echo<T extends number | string>(msg: T) {
 
 echo("manas");
 // echo(true); You wont be able to pass value to function whose type is not number or string
+
+/* Extending Generic Classes */
+interface Product {
+    name: string,
+    price: number
+}
+
+class Store<T>{
+    protected _objects: T[] = [];
+
+    add(object: T): void {
+        this._objects.push(object);
+    }
+
+    // If T is Product
+    // keyof T => 'name' | 'price'
+
+    find(property: keyof T, value: unknown): T | undefined {
+        return this._objects.find(obj => obj[property] === value);
+    }
+
+    get objects() {
+        return this._objects;
+    }
+}
+
+
+let store = new Store<Product>();
+store.add({ name: 'a', price: 1, title: 'bread' });
+console.log(store.find('name', 'a'));
+
+// Pass on the generic type parameter
+
+class CompressibleStore<T> extends Store<T> {
+    compress() {
+    }
+}
+
+// Restrict the generic type parameter
+
+// class SearchableStore<T extends { name: string }> extends Store<T> {
+//     override find(name: string): T | undefined {
+//         return this._objects.find(obj => obj.name === name);
+//     }
+// }
+
+// Fix the generic type parameter
+
+class ProductStore extends Store<Product> {
+    filterByCategory(category: string): Product[] {
+        return [];
+    }
+}
+
