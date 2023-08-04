@@ -146,3 +146,20 @@ let goods: ReadOnly<Goods> = {
     name: 'a',
     price: 1
 }
+
+/** Exercise */
+// 1)
+
+function echo1<T>(arg: T): T {
+    return arg;
+}
+
+// 2)
+function printName<T extends { name: string }>(obj: T) {
+    console.log(obj.name);
+}
+
+// 3)
+class Entity<T>{
+    constructor(public id: T) { }
+}
