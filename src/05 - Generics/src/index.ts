@@ -116,3 +116,33 @@ class ProductStore extends Store<Product> {
     }
 }
 
+/** Type Mapping */
+
+interface Goods {
+    name: string,
+    price: number
+}
+
+//  creating new type using propertys of Good with readOnly
+type ReadOnlyGoods = {
+    readonly [property in keyof Goods]: Goods[property];
+}
+
+// In more like generic way for creating type of readonly with any of the interface
+type ReadOnly<T> = {
+    readonly [K in keyof T]: T[K];
+}
+
+
+type Optional<T> = {
+    [K in keyof T]?: T[K]
+}
+
+type Nullable<T> = {
+    [K in keyof T]: T[K] | null
+}
+
+let goods: ReadOnly<Goods> = {
+    name: 'a',
+    price: 1
+}
