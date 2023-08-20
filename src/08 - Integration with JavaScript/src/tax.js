@@ -1,9 +1,3 @@
-/**
- *
- * @param {number} income
- * @returns {number}
- */
-
-export const calculateTax = (income) => {
+export function calculateTax(income) {
   return income * 0.3;
-};
+}
